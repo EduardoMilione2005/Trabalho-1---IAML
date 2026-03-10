@@ -3,6 +3,7 @@
 ##  Grupo:
 Alceu Vasconcellos Botelho dos Reis<br>
 Eduardo Gomes Milione<br>
+Lennon Rangel<br>
 Vinicius Loures Oliveira
 
 ## Tema: Um chatbot de recomendação de filmes
