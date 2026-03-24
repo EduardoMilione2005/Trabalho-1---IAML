@@ -1,0 +1,25 @@
+# Arquivos do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ambientes virtuais
+venv/
+.env/
+*.env
+
+# Configurações locais
+*.log
+*.sqlite3
+
+# PyCharm / IntelliJ
+.idea/
+*.iml
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# MongoDB dumps (se você exportar dados)
+dump/
