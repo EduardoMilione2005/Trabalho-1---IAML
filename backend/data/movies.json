@@ -1,0 +1,16 @@
+[
+  { "titulo": "Vingadores: Ultimato", "genero": "acao", "ano": 2019 },
+  { "titulo": "John Wick", "genero": "acao", "ano": 2014 },
+  { "titulo": "Resgate", "genero": "acao", "ano": 2020 },
+  { "titulo": "Wolverine: Imortal", "genero": "acao", "ano": 2013 },
+
+  { "titulo": "Se Beber, Não Case", "genero": "comedia", "ano": 2009 },
+  { "titulo": "Superbad", "genero": "comedia", "ano": 2007 },
+  { "titulo": "O Ditador", "genero": "comedia", "ano": 2012 },
+  { "titulo": "Gente Grande", "genero": "comedia", "ano": 2010 },
+
+  { "titulo": "Invocação do Mal", "genero": "terror", "ano": 2013 },
+  { "titulo": "Hereditário", "genero": "terror", "ano": 2018 },
+  { "titulo": "Corra!", "genero": "terror", "ano": 2017 },
+  { "titulo": "O Exorcista", "genero": "terror", "ano": 1973 }
+]
