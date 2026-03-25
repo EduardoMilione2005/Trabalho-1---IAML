@@ -3,9 +3,9 @@ import random
 def identificar_intencao(mensagem: str) -> str:
     mensagem = mensagem.lower()
 
-    if "ação" in mensagem:
+    if "acao" in mensagem or "ação" in mensagem:
         return "genero_acao"
-    elif "comédia" in mensagem:
+    elif "comedia" in mensagem or "comédia" in mensagem:
         return "genero_comedia"
     elif "terror" in mensagem:
         return "genero_terror"
