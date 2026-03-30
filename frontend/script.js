@@ -1,5 +1,12 @@
+const input = document.getElementById("user-input");
+
+input.addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+        sendMessage();
+    }
+});
+
 async function sendMessage() {
-    const input = document.getElementById("user-input");
     const message = input.value;
 
     if (!message) return;
@@ -7,17 +14,22 @@ async function sendMessage() {
     addMessage("Você", message);
     input.value = "";
 
-    const response = await fetch("http://127.0.0.1:5000/chat", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ message })
-    });
+    try {
+        const response = await fetch("http://127.0.0.1:5000/chat", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ message })
+        });
 
-    const data = await response.json();
+        const data = await response.json();
 
-    addMessage("Bot", data.response);
+        addMessage("Bot", data.response);
+
+    } catch (error) {
+        addMessage("Erro", "Não foi possível conectar ao servidor.");
+    }
 }
 
 function addMessage(sender, text) {
@@ -27,4 +39,6 @@ function addMessage(sender, text) {
     msg.textContent = `${sender}: ${text}`;
 
     chatBox.appendChild(msg);
+
+    chatBox.scrollTop = chatBox.scrollHeight;
 }
