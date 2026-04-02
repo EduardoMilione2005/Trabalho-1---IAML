@@ -1,23 +1,36 @@
-import random
-
 def identificar_intencao(mensagem: str) -> str:
     mensagem = mensagem.lower()
 
-    if "acao" in mensagem or "ação" in mensagem:
-        return "genero_acao"
-    elif "comedia" in mensagem or "comédia" in mensagem:
-        return "genero_comedia"
-    elif "terror" in mensagem:
-        return "genero_terror"
+    if mensagem in ["oi", "ola", "olá", "bom dia", "boa tarde", "boa noite"]:
+        return "saudacao"
 
-    return "desconhecido"
+    if "obrigado" in mensagem or "valeu" in mensagem:
+        return "agradecimento"
+
+    generos = {
+        "acao": ["acao", "ação"],
+        "comedia": ["comedia", "comédia", "engraçado"],
+        "terror": ["terror", "medo"],
+        "drama": ["drama"],
+        "romance": ["romance", "romantico"],
+        "ficcao": ["ficcao", "ficção", "sci-fi"],
+        "animacao": ["animacao", "animação", "desenho"],
+        "aventura": ["aventura"],
+        "suspense": ["suspense", "mistério", "misterio"]
+    }
+
+    for genero, palavras in generos.items():
+        for palavra in palavras:
+            if palavra in mensagem:
+                return f"genero_{genero}"
+
+    return "resposta"
 
 
-def pergunta_continuidade():
-    perguntas = [
-        "Você prefere filmes mais novos ou clássicos?",
-        "Quer recomendações parecidas com esse estilo?",
-        "Prefere algo mais leve ou mais intenso?",
-        "Já assistiu algum filme desse gênero?"
-    ]
-    return random.choice(perguntas)
+perguntas = [
+    ("ano", "Você prefere filmes mais novos ou clássicos?"),
+    ("intensidade", "Prefere algo mais leve ou mais intenso?"),
+    ("duracao", "Prefere filmes curtos ou longos?"),
+    ("popularidade", "Quer sugestões populares ou diferentes?"),
+    ("plot_twist", "Gosta de filmes com plot twist?")
+]

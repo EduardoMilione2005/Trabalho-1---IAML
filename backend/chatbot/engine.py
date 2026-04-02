@@ -1,36 +1,106 @@
-from backend.chatbot.questions import identificar_intencao, pergunta_continuidade
+import random
+from backend.chatbot.questions import identificar_intencao, perguntas
 from backend.chatbot.recommender import Recommender
 from backend.models.user_preferences import UserPreferences
 
 
 class ChatbotEngine:
     def __init__(self, user_id):
-        print("DEBUG: Engine carregado corretamente")
         self.user_id = user_id
         self.preferences = UserPreferences()
         self.recommender = Recommender()
+        self.estado = "inicio"
+        self.pergunta_atual = 0
+
+        self.boas_vindas = [
+            "Olá! Eu sou um chatbot de recomendação de filmes.",
+            "Oi! Posso te ajudar a encontrar um filme para assistir.",
+            "Seja bem-vindo! Vamos encontrar um filme para você.",
+        ]
+
+    def fazer_pergunta(self):
+        if self.pergunta_atual < len(perguntas):
+            return perguntas[self.pergunta_atual][1]
+        else:
+            return None
+
+    def salvar_resposta(self, message):
+        if self.pergunta_atual >= len(perguntas):
+            return
+
+        tipo = perguntas[self.pergunta_atual][0]
+
+        if tipo == "ano":
+            self.preferences.definir_ano(message)
+        elif tipo == "intensidade":
+            self.preferences.definir_intensidade(message)
+        elif tipo == "duracao":
+            self.preferences.definir_duracao(message)
+        elif tipo == "popularidade":
+            self.preferences.definir_popularidade(message)
+        elif tipo == "plot_twist":
+            self.preferences.definir_plot_twist(message)
+
+        self.pergunta_atual += 1
+
+    def recomendar(self):
+        recomendacoes = self.recommender.recomendar_por_preferencias(self.preferences)
+
+        if not recomendacoes:
+            return "Ainda estou refinando... me diga mais preferências!"
+
+        if self.preferences.plot_twist is not None:
+            filme = recomendacoes[0]
+            return (
+                f"🎬 Filme perfeito para você:\n"
+                f"🎥 {filme['titulo']} ({filme['ano']})\n"
+                f"⭐ Nota: {filme['nota']}/10\n"
+                f"⏱️ Duração: {filme['duracao']} minutos"
+            )
+
+        nomes = ", ".join([f["titulo"] for f in recomendacoes])
+        return f"🎬 Sugestões atuais: {nomes}"
 
     def get_response(self, message: str) -> str:
         if not message:
-            return "Desculpe, não entendi. Pode repetir? Que tipo de filme você gosta?"
+            return "Pode repetir? Não entendi muito bem."
 
         intencao = identificar_intencao(message)
 
+        if self.estado == "recomendando":
+            if "sim" in message.lower() or "quero" in message.lower():
+                self.pergunta_atual = 0
+                self.preferences = UserPreferences()
+                self.estado = "aguardando_genero"
+                return "Vamos recomeçar! Qual gênero de filme você gosta?"
+
+            if "nao" in message.lower() or "não" in message.lower():
+                return "Tudo bem! Quando quiser é só pedir recomendações."
+
+        if self.estado == "inicio":
+            self.estado = "aguardando_genero"
+            return random.choice(self.boas_vindas) + " Qual gênero de filme você gosta?"
+
         if intencao.startswith("genero"):
             genero = intencao.split("_")[1]
-
             self.preferences.adicionar_genero(genero)
+            self.estado = "fazendo_perguntas"
+            return f"Ótimo! Você gosta de {genero}. " + self.fazer_pergunta()
 
-            recomendacoes = self.recommender.recomendar_por_genero(genero)
+        if self.estado == "fazendo_perguntas":
+            self.salvar_resposta(message)
 
-            if recomendacoes:
-                filmes = ", ".join([f["titulo"] for f in recomendacoes])
+            recomendacao = self.recomendar()
 
-                return (
-                    f"Encontrei alguns filmes de {genero}: {filmes}. "
-                    f"{pergunta_continuidade()}"
-                )
+            proxima = self.fazer_pergunta()
 
-            return f"Não encontrei filmes de {genero}. Quer tentar outro gênero?"
+            if proxima:
+                return recomendacao + "\n\n" + proxima
+            else:
+                self.estado = "recomendando"
+                return recomendacao + "\n\nQuer outra recomendação?"
 
-        return "Você pode me dizer um gênero? (ação, comédia, terror)"
+        if intencao == "agradecimento":
+            return "Por nada! Se quiser mais recomendações é só pedir."
+
+        return "Não entendi muito bem. Pode responder a pergunta?"

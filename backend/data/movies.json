@@ -1,16 +1,292 @@
 [
-  { "titulo": "Vingadores: Ultimato", "genero": "acao", "ano": 2019 },
-  { "titulo": "John Wick", "genero": "acao", "ano": 2014 },
-  { "titulo": "Resgate", "genero": "acao", "ano": 2020 },
-  { "titulo": "Wolverine: Imortal", "genero": "acao", "ano": 2013 },
-
-  { "titulo": "Se Beber, Não Case", "genero": "comedia", "ano": 2009 },
-  { "titulo": "Superbad", "genero": "comedia", "ano": 2007 },
-  { "titulo": "O Ditador", "genero": "comedia", "ano": 2012 },
-  { "titulo": "Gente Grande", "genero": "comedia", "ano": 2010 },
-
-  { "titulo": "Invocação do Mal", "genero": "terror", "ano": 2013 },
-  { "titulo": "Hereditário", "genero": "terror", "ano": 2018 },
-  { "titulo": "Corra!", "genero": "terror", "ano": 2017 },
-  { "titulo": "O Exorcista", "genero": "terror", "ano": 1973 }
+  {
+    "titulo": "Vingadores: Ultimato",
+    "genero": "acao",
+    "ano": 2019,
+    "duracao": 181,
+    "nota": 8.4,
+    "popularidade": "alta",
+    "leve_ou_intenso": "leve",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "John Wick",
+    "genero": "acao",
+    "ano": 2014,
+    "duracao": 101,
+    "nota": 7.4,
+    "popularidade": "alta",
+    "leve_ou_intenso": "intenso",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "Mad Max: Estrada da Fúria",
+    "genero": "acao",
+    "ano": 2015,
+    "duracao": 120,
+    "nota": 8.1,
+    "popularidade": "media",
+    "leve_ou_intenso": "intenso",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "Gladiador",
+    "genero": "acao",
+    "ano": 2000,
+    "duracao": 155,
+    "nota": 8.5,
+    "popularidade": "alta",
+    "leve_ou_intenso": "intenso",
+    "plot_twist": "sim"
+  },
+  {
+    "titulo": "Se Beber, Não Case",
+    "genero": "comedia",
+    "ano": 2009,
+    "duracao": 100,
+    "nota": 7.7,
+    "popularidade": "alta",
+    "leve_ou_intenso": "leve",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "Superbad",
+    "genero": "comedia",
+    "ano": 2007,
+    "duracao": 113,
+    "nota": 7.6,
+    "popularidade": "media",
+    "leve_ou_intenso": "leve",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "As Branquelas",
+    "genero": "comedia",
+    "ano": 2004,
+    "duracao": 109,
+    "nota": 6.9,
+    "popularidade": "alta",
+    "leve_ou_intenso": "intenso",
+    "plot_twist": "sim"
+  },
+  {
+    "titulo": "Gente Grande",
+    "genero": "comedia",
+    "ano": 2010,
+    "duracao": 102,
+    "nota": 6.0,
+    "popularidade": "alta",
+    "leve_ou_intenso": "leve",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "Invocação do Mal",
+    "genero": "terror",
+    "ano": 2013,
+    "duracao": 112,
+    "nota": 7.5,
+    "popularidade": "media",
+    "leve_ou_intenso": "intenso",
+    "plot_twist": "sim"
+  },
+  {
+    "titulo": "Hereditário",
+    "genero": "terror",
+    "ano": 2018,
+    "duracao": 127,
+    "nota": 7.3,
+    "popularidade": "media",
+    "leve_ou_intenso": "intenso",
+    "plot_twist": "sim"
+  },
+  {
+    "titulo": "Corra!",
+    "genero": "terror",
+    "ano": 2017,
+    "duracao": 104,
+    "nota": 7.7,
+    "popularidade": "alta",
+    "leve_ou_intenso": "intenso",
+    "plot_twist": "sim"
+  },
+  {
+    "titulo": "O Exorcista",
+    "genero": "terror",
+    "ano": 1973,
+    "duracao": 122,
+    "nota": 8.1,
+    "popularidade": "alta",
+    "leve_ou_intenso": "leve",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "Interestelar",
+    "genero": "ficcao",
+    "ano": 2014,
+    "duracao": 169,
+    "nota": 8.6,
+    "popularidade": "alta",
+    "leve_ou_intenso": "intenso",
+    "plot_twist": "sim"
+  },
+  {
+    "titulo": "Matrix",
+    "genero": "ficcao",
+    "ano": 1999,
+    "duracao": 136,
+    "nota": 8.7,
+    "popularidade": "alta",
+    "leve_ou_intenso": "intenso",
+    "plot_twist": "sim"
+  },
+  {
+    "titulo": "Blade Runner 2049",
+    "genero": "ficcao",
+    "ano": 2017,
+    "duracao": 164,
+    "nota": 8.0,
+    "popularidade": "media",
+    "leve_ou_intenso": "intenso",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "Duna",
+    "genero": "ficcao",
+    "ano": 2021,
+    "duracao": 155,
+    "nota": 8.0,
+    "popularidade": "alta",
+    "leve_ou_intenso": "leve",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "Titanic",
+    "genero": "romance",
+    "ano": 1997,
+    "duracao": 195,
+    "nota": 7.9,
+    "popularidade": "alta",
+    "leve_ou_intenso": "leve",
+    "plot_twist": "sim"
+  },
+  {
+    "titulo": "Diário de uma Paixão",
+    "genero": "romance",
+    "ano": 2004,
+    "duracao": 123,
+    "nota": 7.8,
+    "popularidade": "baixa",
+    "leve_ou_intenso": "leve",
+    "plot_twist": "sim"
+  },
+  {
+    "titulo": "La La Land",
+    "genero": "romance",
+    "ano": 2016,
+    "duracao": 128,
+    "nota": 8.0,
+    "popularidade": "alta",
+    "leve_ou_intenso": "leve",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "Como Eu Era Antes de Você",
+    "genero": "romance",
+    "ano": 2016,
+    "duracao": 110,
+    "nota": 7.4,
+    "popularidade": "media",
+    "leve_ou_intenso": "leve",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "O Rei Leão",
+    "genero": "animacao",
+    "ano": 1994,
+    "duracao": 88,
+    "nota": 8.5,
+    "popularidade": "alta",
+    "leve_ou_intenso": "intenso",
+    "plot_twist": "sim"
+  },
+  {
+    "titulo": "Toy Story",
+    "genero": "animacao",
+    "ano": 1995,
+    "duracao": 81,
+    "nota": 8.3,
+    "popularidade": "alta",
+    "leve_ou_intenso": "leve",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "Shrek",
+    "genero": "animacao",
+    "ano": 2001,
+    "duracao": 90,
+    "nota": 7.9,
+    "popularidade": "alta",
+    "leve_ou_intenso": "leve",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "O Senhor dos Anéis",
+    "genero": "aventura",
+    "ano": 2001,
+    "duracao": 178,
+    "nota": 8.8,
+    "popularidade": "alta",
+    "leve_ou_intenso": "intenso",
+    "plot_twist": "sim"
+  },
+  {
+    "titulo": "Harry Potter",
+    "genero": "aventura",
+    "ano": 2001,
+    "duracao": 152,
+    "nota": 7.6,
+    "popularidade": "alta",
+    "leve_ou_intenso": "leve",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "Seven",
+    "genero": "suspense",
+    "ano": 1995,
+    "duracao": 127,
+    "nota": 8.6,
+    "popularidade": "media",
+    "leve_ou_intenso": "intenso",
+    "plot_twist": "sim"
+  },
+  {
+    "titulo": "Ilha do Medo",
+    "genero": "suspense",
+    "ano": 2010,
+    "duracao": 138,
+    "nota": 8.2,
+    "popularidade": "alta",
+    "leve_ou_intenso": "leve",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "À Espera de um Milagre",
+    "genero": "drama",
+    "ano": 1999,
+    "duracao": 189,
+    "nota": 8.6,
+    "popularidade": "alta",
+    "leve_ou_intenso": "intenso",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "Clube da Luta",
+    "genero": "drama",
+    "ano": 1999,
+    "duracao": 139,
+    "nota": 8.8,
+    "popularidade": "alta",
+    "leve_ou_intenso": "leve",
+    "plot_twist": "sim"
+  }
 ]
