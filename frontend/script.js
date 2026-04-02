@@ -11,7 +11,7 @@ async function sendMessage() {
 
     if (!message) return;
 
-    addMessage("Você", message);
+    addMessage("user", message);
     input.value = "";
 
     try {
@@ -25,18 +25,20 @@ async function sendMessage() {
 
         const data = await response.json();
 
-        addMessage("Bot", data.response);
+        addMessage("bot", data.response);
 
     } catch (error) {
-        addMessage("Erro", "Não foi possível conectar ao servidor.");
+        addMessage("bot", "Erro: Não foi possível conectar ao servidor.");
     }
 }
 
 function addMessage(sender, text) {
     const chatBox = document.getElementById("chat-box");
 
-    const msg = document.createElement("p");
-    msg.textContent = `${sender}: ${text}`;
+    const msg = document.createElement("div");
+    msg.classList.add("message");
+    msg.classList.add(sender);
+    msg.textContent = text;
 
     chatBox.appendChild(msg);
 
