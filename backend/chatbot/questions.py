@@ -1,7 +1,7 @@
 def identificar_intencao(mensagem: str) -> str:
     mensagem = mensagem.lower()
 
-    if mensagem in ["oi", "ola", "olá", "bom dia", "boa tarde", "boa noite"]:
+    if mensagem in ["oi", "Oi", "ola", "Ola", "olá", "Olá" ,"bom dia", "Bom dia", "Bom Dia", "boa tarde", "Boa tarde", "Boa Tarde", "boa noite", "Boa noite", "Boa Noite"]:
         return "saudacao"
 
     if "obrigado" in mensagem or "valeu" in mensagem:
