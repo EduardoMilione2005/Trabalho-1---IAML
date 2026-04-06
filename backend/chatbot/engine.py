@@ -67,6 +67,18 @@ class ChatbotEngine:
 
         intencao = identificar_intencao(message)
 
+        if self.estado == "fazendo_perguntas":
+            self.salvar_resposta(message)
+
+            recomendacao = self.recomendar()
+            proxima = self.fazer_pergunta()
+
+            if proxima:
+                return recomendacao + "\n\n" + proxima
+            else:
+                self.estado = "recomendando"
+                return recomendacao + "\n\nQuer outra recomendação?"
+
         if self.estado == "recomendando":
             if "sim" in message.lower() or "quero" in message.lower():
                 self.pergunta_atual = 0
@@ -81,26 +93,28 @@ class ChatbotEngine:
             self.estado = "aguardando_genero"
             return random.choice(self.boas_vindas) + " Qual gênero de filme você gosta?"
 
+        if intencao == "pedir_recomendacao":
+            self.estado = "aguardando_genero"
+            return "Claro! Qual gênero de filme você prefere? (ação, comédia, terror...)"
+
         if intencao.startswith("genero"):
             genero = intencao.split("_")[1]
+
+            self.preferences = UserPreferences()
+            self.pergunta_atual = 0
+
             self.preferences.adicionar_genero(genero)
             self.estado = "fazendo_perguntas"
-            return f"Ótimo! Você gosta de {genero}. " + self.fazer_pergunta()
 
-        if self.estado == "fazendo_perguntas":
-            self.salvar_resposta(message)
+            pergunta = self.fazer_pergunta()
 
-            recomendacao = self.recomendar()
-
-            proxima = self.fazer_pergunta()
-
-            if proxima:
-                return recomendacao + "\n\n" + proxima
+            if pergunta:
+                return f"Ótimo! Você gosta de {genero}. {pergunta}"
             else:
-                self.estado = "recomendando"
-                return recomendacao + "\n\nQuer outra recomendação?"
+                return f"Ótimo! Você gosta de {genero}."
 
         if intencao == "agradecimento":
-            return "Por nada! Se quiser mais recomendações é só pedir."
+            self.estado = "aguardando_genero"
+            return "Por nada! 😊 Quer mais recomendações? Me diga um gênero!"
 
-        return "Não entendi muito bem. Pode responder a pergunta?"
+        return "Não entendi muito bem 🤔. Você pode me dizer um gênero de filme?"

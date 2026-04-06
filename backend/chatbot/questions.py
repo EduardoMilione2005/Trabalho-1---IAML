@@ -24,7 +24,10 @@ def identificar_intencao(mensagem: str) -> str:
             if palavra in mensagem:
                 return f"genero_{genero}"
 
-    return "resposta"
+    if "filme" in mensagem or "recomenda" in mensagem or "indica" in mensagem:
+        return "pedir_recomendacao"
+
+    return "desconhecido"
 
 
 perguntas = [
