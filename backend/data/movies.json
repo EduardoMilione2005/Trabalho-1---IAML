@@ -25,7 +25,7 @@
     "ano": 2015,
     "duracao": 120,
     "nota": 8.1,
-    "popularidade": "media",
+    "popularidade": "baixa",
     "leve_ou_intenso": "intenso",
     "plot_twist": "nao"
   },
@@ -39,6 +39,57 @@
     "leve_ou_intenso": "intenso",
     "plot_twist": "sim"
   },
+  {
+    "titulo": "Missão: Impossível - Efeito Fallout",
+    "genero": "acao",
+    "ano": 2018,
+    "duracao": 147,
+    "nota": 7.7,
+    "popularidade": "alta",
+    "leve_ou_intenso": "intenso",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "Homem de Ferro",
+    "genero": "acao",
+    "ano": 2008,
+    "duracao": 126,
+    "nota": 7.9,
+    "popularidade": "alta",
+    "leve_ou_intenso": "leve",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "O Cavaleiro das Trevas",
+    "genero": "acao",
+    "ano": 2008,
+    "duracao": 152,
+    "nota": 9.0,
+    "popularidade": "alta",
+    "leve_ou_intenso": "intenso",
+    "plot_twist": "sim"
+  },
+  {
+    "titulo": "Velocidade Máxima",
+    "genero": "acao",
+    "ano": 1994,
+    "duracao": 116,
+    "nota": 7.2,
+    "popularidade": "baixa",
+    "leve_ou_intenso": "leve",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "Os Mercenários",
+    "genero": "acao",
+    "ano": 2010,
+    "duracao": 103,
+    "nota": 6.5,
+    "popularidade": "alta",
+    "leve_ou_intenso": "intenso",
+    "plot_twist": "nao"
+  },
+
   {
     "titulo": "Se Beber, Não Case",
     "genero": "comedia",
@@ -55,7 +106,7 @@
     "ano": 2007,
     "duracao": 113,
     "nota": 7.6,
-    "popularidade": "media",
+    "popularidade": "baixa",
     "leve_ou_intenso": "leve",
     "plot_twist": "nao"
   },
@@ -80,12 +131,63 @@
     "plot_twist": "nao"
   },
   {
+    "titulo": "O Máskara",
+    "genero": "comedia",
+    "ano": 1994,
+    "duracao": 101,
+    "nota": 6.9,
+    "popularidade": "alta",
+    "leve_ou_intenso": "leve",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "Todo Mundo em Pânico",
+    "genero": "comedia",
+    "ano": 2000,
+    "duracao": 88,
+    "nota": 6.2,
+    "popularidade": "alta",
+    "leve_ou_intenso": "leve",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "Debi & Lóide",
+    "genero": "comedia",
+    "ano": 1994,
+    "duracao": 107,
+    "nota": 7.3,
+    "popularidade": "baixa",
+    "leve_ou_intenso": "leve",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "O Âncora",
+    "genero": "comedia",
+    "ano": 2004,
+    "duracao": 94,
+    "nota": 7.2,
+    "popularidade": "baixa",
+    "leve_ou_intenso": "leve",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "Zoolander",
+    "genero": "comedia",
+    "ano": 2001,
+    "duracao": 90,
+    "nota": 6.5,
+    "popularidade": "baixa",
+    "leve_ou_intenso": "leve",
+    "plot_twist": "nao"
+  },
+
+  {
     "titulo": "Invocação do Mal",
     "genero": "terror",
     "ano": 2013,
     "duracao": 112,
     "nota": 7.5,
-    "popularidade": "media",
+    "popularidade": "alta",
     "leve_ou_intenso": "intenso",
     "plot_twist": "sim"
   },
@@ -95,7 +197,7 @@
     "ano": 2018,
     "duracao": 127,
     "nota": 7.3,
-    "popularidade": "media",
+    "popularidade": "baixa",
     "leve_ou_intenso": "intenso",
     "plot_twist": "sim"
   },
@@ -120,133 +222,297 @@
     "plot_twist": "nao"
   },
   {
-    "titulo": "Interestelar",
-    "genero": "ficcao",
-    "ano": 2014,
-    "duracao": 169,
-    "nota": 8.6,
+    "titulo": "Halloween",
+    "genero": "terror",
+    "ano": 1978,
+    "duracao": 91,
+    "nota": 7.7,
     "popularidade": "alta",
     "leve_ou_intenso": "intenso",
-    "plot_twist": "sim"
+    "plot_twist": "nao"
   },
   {
-    "titulo": "Matrix",
-    "genero": "ficcao",
-    "ano": 1999,
-    "duracao": 136,
-    "nota": 8.7,
-    "popularidade": "alta",
-    "leve_ou_intenso": "intenso",
-    "plot_twist": "sim"
-  },
-  {
-    "titulo": "Blade Runner 2049",
-    "genero": "ficcao",
+    "titulo": "It: A Coisa",
+    "genero": "terror",
     "ano": 2017,
-    "duracao": 164,
-    "nota": 8.0,
-    "popularidade": "media",
-    "leve_ou_intenso": "intenso",
-    "plot_twist": "nao"
-  },
-  {
-    "titulo": "Duna",
-    "genero": "ficcao",
-    "ano": 2021,
-    "duracao": 155,
-    "nota": 8.0,
+    "duracao": 135,
+    "nota": 7.3,
     "popularidade": "alta",
     "leve_ou_intenso": "leve",
     "plot_twist": "nao"
   },
   {
-    "titulo": "Titanic",
-    "genero": "romance",
-    "ano": 1997,
-    "duracao": 195,
-    "nota": 7.9,
+    "titulo": "O Chamado",
+    "genero": "terror",
+    "ano": 2002,
+    "duracao": 115,
+    "nota": 7.1,
     "popularidade": "alta",
     "leve_ou_intenso": "leve",
     "plot_twist": "sim"
   },
   {
-    "titulo": "Diário de uma Paixão",
-    "genero": "romance",
-    "ano": 2004,
-    "duracao": 123,
-    "nota": 7.8,
+    "titulo": "A Bruxa",
+    "genero": "terror",
+    "ano": 2015,
+    "duracao": 92,
+    "nota": 6.9,
     "popularidade": "baixa",
-    "leve_ou_intenso": "leve",
-    "plot_twist": "sim"
-  },
-  {
-    "titulo": "La La Land",
-    "genero": "romance",
-    "ano": 2016,
-    "duracao": 128,
-    "nota": 8.0,
-    "popularidade": "alta",
-    "leve_ou_intenso": "leve",
-    "plot_twist": "nao"
-  },
-  {
-    "titulo": "Como Eu Era Antes de Você",
-    "genero": "romance",
-    "ano": 2016,
-    "duracao": 110,
-    "nota": 7.4,
-    "popularidade": "media",
-    "leve_ou_intenso": "leve",
-    "plot_twist": "nao"
-  },
-  {
-    "titulo": "O Rei Leão",
-    "genero": "animacao",
-    "ano": 1994,
-    "duracao": 88,
-    "nota": 8.5,
-    "popularidade": "alta",
     "leve_ou_intenso": "intenso",
     "plot_twist": "sim"
   },
   {
-    "titulo": "Toy Story",
-    "genero": "animacao",
-    "ano": 1995,
-    "duracao": 81,
-    "nota": 8.3,
+    "titulo": "Halloween",
+    "genero": "terror",
+    "ano": 1978,
+    "duracao": 91,
+    "nota": 7.7,
+    "popularidade": "alta",
+    "leve_ou_intenso": "intenso",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "It: A Coisa",
+    "genero": "terror",
+    "ano": 2017,
+    "duracao": 135,
+    "nota": 7.3,
     "popularidade": "alta",
     "leve_ou_intenso": "leve",
     "plot_twist": "nao"
   },
   {
-    "titulo": "Shrek",
-    "genero": "animacao",
-    "ano": 2001,
-    "duracao": 90,
-    "nota": 7.9,
+    "titulo": "O Chamado",
+    "genero": "terror",
+    "ano": 2002,
+    "duracao": 115,
+    "nota": 7.1,
     "popularidade": "alta",
     "leve_ou_intenso": "leve",
-    "plot_twist": "nao"
+    "plot_twist": "sim"
   },
   {
-    "titulo": "O Senhor dos Anéis",
-    "genero": "aventura",
-    "ano": 2001,
-    "duracao": 178,
+    "titulo": "A Bruxa",
+    "genero": "terror",
+    "ano": 2015,
+    "duracao": 92,
+    "nota": 6.9,
+    "popularidade": "baixa",
+    "leve_ou_intenso": "intenso",
+    "plot_twist": "sim"
+  },
+  {
+    "titulo": "Pesadelo em Elm Street",
+    "genero": "terror",
+    "ano": 1984,
+    "duracao": 91,
+    "nota": 7.4,
+    "popularidade": "alta",
+    "leve_ou_intenso": "intenso",
+    "plot_twist": "nao"
+  },
+
+  {
+    "titulo": "A Origem",
+    "genero": "ficcao",
+    "ano": 2010,
+    "duracao": 148,
     "nota": 8.8,
     "popularidade": "alta",
     "leve_ou_intenso": "intenso",
     "plot_twist": "sim"
   },
   {
-    "titulo": "Harry Potter",
-    "genero": "aventura",
-    "ano": 2001,
-    "duracao": 152,
+    "titulo": "Ex Machina",
+    "genero": "ficcao",
+    "ano": 2014,
+    "duracao": 108,
+    "nota": 7.7,
+    "popularidade": "baixa",
+    "leve_ou_intenso": "leve",
+    "plot_twist": "sim"
+  },
+  {
+    "titulo": "Gravidade",
+    "genero": "ficcao",
+    "ano": 2013,
+    "duracao": 91,
+    "nota": 7.7,
+    "popularidade": "alta",
+    "leve_ou_intenso": "intenso",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "O Quinto Elemento",
+    "genero": "ficcao",
+    "ano": 1997,
+    "duracao": 126,
     "nota": 7.6,
     "popularidade": "alta",
     "leve_ou_intenso": "leve",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "Minority Report",
+    "genero": "ficcao",
+    "ano": 2002,
+    "duracao": 145,
+    "nota": 7.6,
+    "popularidade": "baixa",
+    "leve_ou_intenso": "intenso",
+    "plot_twist": "sim"
+  },
+
+  {
+    "titulo": "Orgulho e Preconceito",
+    "genero": "romance",
+    "ano": 2005,
+    "duracao": 129,
+    "nota": 7.8,
+    "popularidade": "alta",
+    "leve_ou_intenso": "leve",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "Amor e Outras Drogas",
+    "genero": "romance",
+    "ano": 2010,
+    "duracao": 112,
+    "nota": 6.7,
+    "popularidade": "baixa",
+    "leve_ou_intenso": "leve",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "Questão de Tempo",
+    "genero": "romance",
+    "ano": 2013,
+    "duracao": 123,
+    "nota": 7.8,
+    "popularidade": "alta",
+    "leve_ou_intenso": "leve",
+    "plot_twist": "sim"
+  },
+  {
+    "titulo": "Romeu + Julieta",
+    "genero": "romance",
+    "ano": 1996,
+    "duracao": 120,
+    "nota": 6.7,
+    "popularidade": "alta",
+    "leve_ou_intenso": "intenso",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "Antes do Amanhecer",
+    "genero": "romance",
+    "ano": 1995,
+    "duracao": 101,
+    "nota": 8.1,
+    "popularidade": "baixa",
+    "leve_ou_intenso": "leve",
+    "plot_twist": "nao"
+  },
+
+  {
+    "titulo": "Procurando Nemo",
+    "genero": "animacao",
+    "ano": 2003,
+    "duracao": 100,
+    "nota": 8.1,
+    "popularidade": "alta",
+    "leve_ou_intenso": "leve",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "Frozen",
+    "genero": "animacao",
+    "ano": 2013,
+    "duracao": 102,
+    "nota": 7.4,
+    "popularidade": "alta",
+    "leve_ou_intenso": "leve",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "Divertida Mente",
+    "genero": "animacao",
+    "ano": 2015,
+    "duracao": 95,
+    "nota": 8.1,
+    "popularidade": "alta",
+    "leve_ou_intenso": "leve",
+    "plot_twist": "sim"
+  },
+  {
+    "titulo": "Up: Altas Aventuras",
+    "genero": "animacao",
+    "ano": 2009,
+    "duracao": 96,
+    "nota": 8.2,
+    "popularidade": "alta",
+    "leve_ou_intenso": "leve",
+    "plot_twist": "sim"
+  },
+  {
+    "titulo": "Os Incríveis",
+    "genero": "animacao",
+    "ano": 2004,
+    "duracao": 115,
+    "nota": 8.0,
+    "popularidade": "alta",
+    "leve_ou_intenso": "intenso",
+    "plot_twist": "nao"
+  },
+
+  {
+    "titulo": "Piratas do Caribe",
+    "genero": "aventura",
+    "ano": 2003,
+    "duracao": 143,
+    "nota": 8.0,
+    "popularidade": "alta",
+    "leve_ou_intenso": "leve",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "Indiana Jones e os Caçadores da Arca Perdida",
+    "genero": "aventura",
+    "ano": 1981,
+    "duracao": 115,
+    "nota": 8.4,
+    "popularidade": "alta",
+    "leve_ou_intenso": "intenso",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "Jurassic Park",
+    "genero": "aventura",
+    "ano": 1993,
+    "duracao": 127,
+    "nota": 8.1,
+    "popularidade": "alta",
+    "leve_ou_intenso": "leve",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "A Múmia",
+    "genero": "aventura",
+    "ano": 1999,
+    "duracao": 124,
+    "nota": 7.0,
+    "popularidade": "baixa",
+    "leve_ou_intenso": "leve",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "Avatar",
+    "genero": "aventura",
+    "ano": 2009,
+    "duracao": 162,
+    "nota": 7.8,
+    "popularidade": "alta",
+    "leve_ou_intenso": "intenso",
     "plot_twist": "nao"
   },
   {
@@ -255,7 +521,7 @@
     "ano": 1995,
     "duracao": 127,
     "nota": 8.6,
-    "popularidade": "media",
+    "popularidade": "baixa",
     "leve_ou_intenso": "intenso",
     "plot_twist": "sim"
   },
@@ -270,12 +536,63 @@
     "plot_twist": "nao"
   },
   {
+    "titulo": "O Sexto Sentido",
+    "genero": "suspense",
+    "ano": 1999,
+    "duracao": 107,
+    "nota": 8.2,
+    "popularidade": "alta",
+    "leve_ou_intenso": "intenso",
+    "plot_twist": "sim"
+  },
+  {
+    "titulo": "Garota Exemplar",
+    "genero": "suspense",
+    "ano": 2014,
+    "duracao": 149,
+    "nota": 8.1,
+    "popularidade": "alta",
+    "leve_ou_intenso": "intenso",
+    "plot_twist": "sim"
+  },
+  {
+    "titulo": "Prisioneiros",
+    "genero": "suspense",
+    "ano": 2013,
+    "duracao": 153,
+    "nota": 8.1,
+    "popularidade": "baixa",
+    "leve_ou_intenso": "intenso",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "Oldboy",
+    "genero": "suspense",
+    "ano": 2003,
+    "duracao": 120,
+    "nota": 8.4,
+    "popularidade": "baixa",
+    "leve_ou_intenso": "intenso",
+    "plot_twist": "sim"
+  },
+  {
+    "titulo": "Os Outros",
+    "genero": "suspense",
+    "ano": 2001,
+    "duracao": 104,
+    "nota": 7.6,
+    "popularidade": "alta",
+    "leve_ou_intenso": "leve",
+    "plot_twist": "sim"
+  },
+
+  {
     "titulo": "À Espera de um Milagre",
     "genero": "drama",
     "ano": 1999,
     "duracao": 189,
     "nota": 8.6,
-    "popularidade": "alta",
+    "popularidade": "baixa",
     "leve_ou_intenso": "intenso",
     "plot_twist": "nao"
   },
@@ -288,5 +605,55 @@
     "popularidade": "alta",
     "leve_ou_intenso": "leve",
     "plot_twist": "sim"
+  },
+  {
+    "titulo": "Forrest Gump",
+    "genero": "drama",
+    "ano": 1994,
+    "duracao": 142,
+    "nota": 8.8,
+    "popularidade": "alta",
+    "leve_ou_intenso": "leve",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "Beleza Americana",
+    "genero": "drama",
+    "ano": 1999,
+    "duracao": 122,
+    "nota": 8.3,
+    "popularidade": "baixa",
+    "leve_ou_intenso": "intenso",
+    "plot_twist": "sim"
+  },
+  {
+    "titulo": "O Pianista",
+    "genero": "drama",
+    "ano": 2002,
+    "duracao": 150,
+    "nota": 8.5,
+    "popularidade": "alta",
+    "leve_ou_intenso": "intenso",
+    "plot_twist": "nao"
+  },
+  {
+    "titulo": "A Vida é Bela",
+    "genero": "drama",
+    "ano": 1997,
+    "duracao": 116,
+    "nota": 8.6,
+    "popularidade": "alta",
+    "leve_ou_intenso": "leve",
+    "plot_twist": "sim"
+  },
+  {
+    "titulo": "12 Anos de Escravidão",
+    "genero": "drama",
+    "ano": 2013,
+    "duracao": 134,
+    "nota": 8.1,
+    "popularidade": "alta",
+    "leve_ou_intenso": "intenso",
+    "plot_twist": "nao"
   }
-]
+  ]
