@@ -10,18 +10,6 @@ function buildStrip(id) {
 buildStrip('strip-top');
 buildStrip('strip-bottom');
 
-document.querySelectorAll('.suggestion-chip').forEach(chip => {
-    chip.addEventListener('click', function () {
-        const text = Array.from(chip.childNodes)
-            .filter(n => n.nodeType === Node.TEXT_NODE)
-            .map(n => n.textContent.trim())
-            .filter(Boolean)
-            .join('');
-        document.getElementById('user-input').value = text;
-        document.getElementById('user-input').focus();
-    });
-});
-
 document.getElementById('user-input').addEventListener('keypress', function (e) {
     if (e.key === 'Enter') sendMessage();
 });
@@ -35,6 +23,7 @@ async function sendMessage() {
     input.value = '';
 
     const typingRow = showTyping();
+    const startTime = Date.now();
 
     try {
         const response = await fetch('http://127.0.0.1:5000/chat', {
@@ -42,9 +31,18 @@ async function sendMessage() {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ message })
         });
+
         const data = await response.json();
+        const elapsed = Date.now() - startTime;
+        const minTime = 800;
+
+        if (elapsed < minTime) {
+            await new Promise(resolve => setTimeout(resolve, minTime - elapsed));
+        }
+
         typingRow.remove();
         addMessage('bot', data.response);
+
     } catch {
         typingRow.remove();
         addMessage('bot', '⚠️ Não consegui conectar ao servidor. Tente novamente em instantes.');
@@ -63,7 +61,7 @@ function addMessage(sender, text) {
 
     const msg = document.createElement('div');
     msg.className = `message ${sender === 'user' ? 'user-msg' : 'bot-msg'}`;
-    msg.textContent = text;
+    msg.innerHTML = text.replace(/\n/g, '<br>');
 
     row.appendChild(av);
     row.appendChild(msg);

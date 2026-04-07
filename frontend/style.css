@@ -178,8 +178,9 @@ body::before {
     padding: 11px 15px;
     border-radius: 14px;
     font-size: 13.5px;
-    line-height: 1.6;
+    line-height: 1.4;
     word-wrap: break-word;
+    margin-bottom: 10px;
 }
 
 .bot-msg {

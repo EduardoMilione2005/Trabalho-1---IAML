@@ -87,8 +87,8 @@ class ChatbotEngine:
         if self.preferences.plot_twist is not None:
             filme = recomendacoes[0]
             return (
-                f"🎬 Filme perfeito para você:\n"
-                f"🎥 {filme['titulo']} ({filme['ano']})\n"
+                f"Filme perfeito para você:\n"
+                f"\n🎥 {filme['titulo']} ({filme['ano']})\n"
                 f"⭐ Nota: {filme['nota']}/10\n"
                 f"⏱️ Duração: {filme['duracao']} minutos"
             )
@@ -112,7 +112,7 @@ class ChatbotEngine:
             proxima = self.fazer_pergunta()
 
             if proxima:
-                return recomendacao + "\n\n" + proxima
+                return proxima
             else:
                 self.estado = "recomendando"
                 return recomendacao + "\n\nQuer outra recomendação?"
