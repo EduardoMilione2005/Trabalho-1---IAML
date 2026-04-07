@@ -1,3 +1,11 @@
+import unicodedata
+
+def normalizar_texto(texto: str) -> str:
+    texto = texto.lower().strip()
+    texto = unicodedata.normalize("NFD", texto)
+    texto = "".join(c for c in texto if unicodedata.category(c) != "Mn")
+    return texto
+
 class UserPreferences:
     def __init__(self):
         self.genero = None
@@ -8,39 +16,39 @@ class UserPreferences:
         self.plot_twist = None
 
     def adicionar_genero(self, genero):
-        self.genero = genero.lower()
+        self.genero = normalizar_texto(genero)
 
     def definir_ano(self, valor):
-        valor = valor.lower()
-        if "novo" in valor or "recente" in valor:
+        valor = normalizar_texto(valor)
+        if valor in ["novo", "novos", "recente", "recentes"]:
             self.ano = "novo"
-        elif "classico" in valor or "antigo" in valor:
+        elif valor in ["classico", "classicos", "antigo", "antigos"]:
             self.ano = "classico"
 
     def definir_duracao(self, valor):
-        valor = valor.lower()
-        if "curto" in valor:
+        valor = normalizar_texto(valor)
+        if valor in ["curto", "curtos"]:
             self.duracao = "curto"
-        elif "longo" in valor:
+        elif valor in ["longo", "longos"]:
             self.duracao = "longo"
 
     def definir_intensidade(self, valor):
-        valor = valor.lower()
-        if "leve" in valor:
+        valor = normalizar_texto(valor)
+        if valor in ["leve", "leves"]:
             self.intensidade = "leve"
-        elif "intenso" in valor:
+        elif valor in ["intenso", "intensos"]:
             self.intensidade = "intenso"
 
     def definir_popularidade(self, valor):
-        valor = valor.lower()
-        if "popular" in valor:
+        valor = normalizar_texto(valor)
+        if valor in ["popular", "populares"]:
             self.popularidade = "alta"
-        elif "diferente" in valor or "menos conhecido" in valor:
+        elif valor in ["diferente", "diferentes", "menos conhecido", "menos conhecidos"]:
             self.popularidade = "baixa"
 
     def definir_plot_twist(self, valor):
-        valor = valor.lower()
-        if "sim" in valor:
+        valor = normalizar_texto(valor)
+        if valor in ["sim", "s", "yes"]:
             self.plot_twist = "sim"
-        elif "nao" in valor or "não" in valor:
+        elif valor in ["nao", "não", "n"]:
             self.plot_twist = "nao"

@@ -1,27 +1,50 @@
-def identificar_intencao(mensagem: str) -> str:
-    mensagem = mensagem.lower()
+import re
+import unicodedata
 
-    if mensagem in ["oi", "Oi", "ola", "Ola", "olá", "Olá" ,"bom dia", "Bom dia", "Bom Dia", "boa tarde", "Boa tarde", "Boa Tarde", "boa noite", "Boa noite", "Boa Noite"]:
+def normalizar_texto(texto: str) -> str:
+    """
+    Converte texto para minúsculo, remove espaços extras e acentos.
+    """
+    texto = texto.lower().strip()
+    texto = unicodedata.normalize("NFD", texto)
+    texto = "".join(c for c in texto if unicodedata.category(c) != "Mn")
+    return texto
+
+def identificar_intencao(mensagem: str) -> str:
+    """
+    Identifica a intenção do usuário com base em palavras-chave.
+    Usa regex com limites de palavra para gêneros, evitando confusões
+    como 'acao' dentro de 'animacao'.
+    """
+    if not mensagem or not mensagem.strip():
+        return "desconhecido"
+
+    mensagem = normalizar_texto(mensagem)
+
+    # Saudações
+    if mensagem in ["oi", "ola", "bom dia", "boa tarde", "boa noite"]:
         return "saudacao"
 
+    # Agradecimento
     if "obrigado" in mensagem or "valeu" in mensagem:
         return "agradecimento"
 
     generos = {
-        "acao": ["acao", "ação"],
-        "comedia": ["comedia", "comédia", "engraçado"],
+        "acao": ["acao"],
+        "comedia": ["comedia", "engracado"],
         "terror": ["terror", "medo"],
         "drama": ["drama"],
         "romance": ["romance", "romantico"],
-        "ficcao": ["ficcao", "ficção", "sci-fi"],
-        "animacao": ["animacao", "animação", "desenho"],
+        "ficcao": ["ficcao", "scifi"],
+        "animacao": ["animacao", "desenho"],
         "aventura": ["aventura"],
-        "suspense": ["suspense", "mistério", "misterio"]
+        "suspense": ["suspense", "misterio"]
     }
 
     for genero, palavras in generos.items():
         for palavra in palavras:
-            if palavra in mensagem:
+            padrao = r"\b" + re.escape(palavra) + r"\b"
+            if re.search(padrao, mensagem):
                 return f"genero_{genero}"
 
     if "filme" in mensagem or "recomenda" in mensagem or "indica" in mensagem:

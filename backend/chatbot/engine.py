@@ -26,22 +26,57 @@ class ChatbotEngine:
 
     def salvar_resposta(self, message):
         if self.pergunta_atual >= len(perguntas):
-            return
+            return None
 
         tipo = perguntas[self.pergunta_atual][0]
+        msg = message.lower().strip()
+        valido = False
 
         if tipo == "ano":
-            self.preferences.definir_ano(message)
-        elif tipo == "intensidade":
-            self.preferences.definir_intensidade(message)
-        elif tipo == "duracao":
-            self.preferences.definir_duracao(message)
-        elif tipo == "popularidade":
-            self.preferences.definir_popularidade(message)
-        elif tipo == "plot_twist":
-            self.preferences.definir_plot_twist(message)
+            if "novo" in msg or "recente" in msg:
+                self.preferences.definir_ano(msg)
+                valido = True
+            elif "classico" in msg or "antigo" in msg:
+                self.preferences.definir_ano(msg)
+                valido = True
 
-        self.pergunta_atual += 1
+        elif tipo == "intensidade":
+            if "leve" in msg:
+                self.preferences.definir_intensidade(msg)
+                valido = True
+            elif "intenso" in msg:
+                self.preferences.definir_intensidade(msg)
+                valido = True
+
+        elif tipo == "duracao":
+            if "curto" in msg:
+                self.preferences.definir_duracao(msg)
+                valido = True
+            elif "longo" in msg:
+                self.preferences.definir_duracao(msg)
+                valido = True
+
+        elif tipo == "popularidade":
+            if "popular" in msg:
+                self.preferences.definir_popularidade(msg)
+                valido = True
+            elif "diferente" in msg or "menos conhecido" in msg:
+                self.preferences.definir_popularidade(msg)
+                valido = True
+
+        elif tipo == "plot_twist":
+            if "sim" in msg:
+                self.preferences.definir_plot_twist(msg)
+                valido = True
+            elif "nao" in msg or "não" in msg:
+                self.preferences.definir_plot_twist(msg)
+                valido = True
+
+        if valido:
+            self.pergunta_atual += 1
+            return None
+        else:
+            return f"Não entendi sua resposta. {perguntas[self.pergunta_atual][1]}"
 
     def recomendar(self):
         recomendacoes = self.recommender.recomendar_por_preferencias(self.preferences)
@@ -62,13 +97,16 @@ class ChatbotEngine:
         return f"🎬 Sugestões atuais: {nomes}"
 
     def get_response(self, message: str) -> str:
-        if not message:
+        if not message or not message.strip():
             return "Pode repetir? Não entendi muito bem."
 
         intencao = identificar_intencao(message)
 
         if self.estado == "fazendo_perguntas":
-            self.salvar_resposta(message)
+            resposta = self.salvar_resposta(message)
+
+            if resposta:
+                return resposta
 
             recomendacao = self.recomendar()
             proxima = self.fazer_pergunta()
@@ -90,8 +128,11 @@ class ChatbotEngine:
                 return "Tudo bem! Quando quiser é só pedir recomendações."
 
         if self.estado == "inicio":
-            self.estado = "aguardando_genero"
-            return random.choice(self.boas_vindas) + " Qual gênero de filme você gosta?"
+            if not message.strip():
+                return random.choice(self.boas_vindas) + " Me diga um gênero de filme para começarmos!"
+            else:
+                self.estado = "aguardando_genero"
+                return random.choice(self.boas_vindas) + " Qual gênero de filme você gosta?"
 
         if intencao == "pedir_recomendacao":
             self.estado = "aguardando_genero"
